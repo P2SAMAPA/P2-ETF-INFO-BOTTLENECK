@@ -1,32 +1,20 @@
 # P2-ETF-INFO-BOTTLENECK
 
-Welcome to the P2-ETF-INFO-BOTTLENECK repository!
+# Information Bottleneck (IB) Engine
 
-## Description
+Uses the Variational Information Bottleneck to compress ETF features into a latent representation that retains maximum information about next‑day returns. Balances prediction accuracy (MSE) and compression (KL divergence) with a β hyperparameter.
 
-This repository contains code and resources related to ETF information and bottleneck analysis.
+- **Rolling windows:** 63, 126, 252 days (best per ETF)
+- **Model:** Encoder (→ latent Gaussian) + Decoder (→ return)
+- **Output:** top 3 ETFs per universe by predicted return, with the chosen window
+- **Dashboard:** shows top ETFs, full ranking table, and validation losses per window
 
-## Getting Started
+Runs daily on GitHub Actions.
 
-To get started with this project, clone the repository and explore the contents.
+## Local execution
 
 ```bash
-git clone https://github.com/P2SAMAPA/P2-ETF-INFO-BOTTLENECK.git
-cd P2-ETF-INFO-BOTTLENECK
-```
-
-## Usage
-
-[Add usage instructions here]
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues for any bugs or feature requests.
-
-## License
-
-[Specify your license here]
-
-## Contact
-
-For more information, please contact the repository maintainer.
+pip install -r requirements.txt
+export HF_TOKEN=<your_token>
+python trainer.py
+streamlit run streamlit_app.py
