@@ -20,7 +20,7 @@ UNIVERSES = {
 MACRO_COLUMNS = ["VIX", "DXY", "T10Y2Y", "TBILL_3M"]
 
 # Windows for rolling evaluation (days)
-WINDOWS = [63, 126, 252]
+WINDOWS = [63, 126, 252, 504, 1008, 2016]
 
 # Variational IB hyperparameters
 LATENT_DIM = 16
