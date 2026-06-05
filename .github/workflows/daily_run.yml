@@ -2,7 +2,7 @@ name: Daily Info Bottleneck Run
 
 on:
   schedule:
-    - cron: '20 00 * * 1-6'
+    - cron: '20 03 * * 1-6'
   workflow_dispatch:
 
 jobs:
